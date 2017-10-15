@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Survey</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 
@@ -20,19 +21,20 @@
                 <h2>About You</h2>
                 <div class="form-group">
                     <label>Name (Required)</label>
-                    <input type="text" class="form-control" id="userName" placeholder="">
+                    <input type="text" class="form-control" id="name" placeholder="">
                 </div>
                 <div class="form-group">
                     <label>Link to Photo Image (Required)</label>
-                    <input type="url" class="form-control" id="exampleInputPassword1" placeholder="">
+                    <input type="url" class="form-control" id="image" placeholder="">
                 </div>
         </form>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <h2>Question 1</h2>
+                <div class="form-group">
+                    <h2>Question 1</h2>
+                    <h4>Do you like meeting new people?</h4>
+                    <div class="col-md-2">
                         <select class="form-control" id="question1">
                             <option value="">Make a selection</option>
                             <option value="1">1 (Strongly Disagree)</option>
@@ -119,9 +121,102 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <h2>Question 7</h2>
+                        <select class="form-control" id="question7">
+                            <option value="">Make a selection</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <h2>Question 8</h2>
+                        <select class="form-control" id="question8">
+                            <option value="">Make a selection</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <h2>Question 9</h2>
+                        <select class="form-control" id="question9">
+                            <option value="">Make a selection</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <h2>Question 10</h2>
+                        <select class="form-control" id="question10">
+                            <option value="">Make a selection</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-block" id="submit"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
             <br>
         </div>
 </body>
 
 </html>
+<script type="text/javascript">
+$("#submit").on("click", function(event) {
+    event.preventDefault();
+    var userInput = {
+        name: $("#name").val().trim(),
+        image: $("#image").val().trim(),
+        scores: [
+            $("#question1").val().trim(),
+            $("#question2").val().trim(),
+            $("#question3").val().trim(),
+            $("#question4").val().trim(),
+            $("#question5").val().trim(),
+            $("#question6").val().trim(),
+            $("#question7").val().trim(),
+            $("#question8").val().trim(),
+            $("#question9").val().trim(),
+            $("#question10").val().trim(),
+        ]
+    };
+ //   console.log(userInput);
+    $.post("/api/friends", userInput).done(function(data) {
+        if (data) {
+            alert("Finding Friend!");
+        } else {
+            alert("Please fill out all fields.");
+        }
+        $("#name").val("");
+        $("#image").val("");
+        $("#question1").val("");
+        $("#question2").val("");
+    });
+});
+</script>
