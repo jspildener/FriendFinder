@@ -6,9 +6,27 @@
     <title>Survey</title>
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" class="reset-data" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" align="center">Best Match</h4>
+                </div>
+                <h4 id="modalTitle" align="center"></h4>
+                <div class="modal-body">
+                    <img id="modalBody" style="width:500px;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" class="reset-data" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="jumbotron">
             <h1><span class="glyphicon glyphicon-thumbs-up"></span> Friend Finder</h1>
@@ -27,197 +45,178 @@
                     <label>Link to Photo Image (Required)</label>
                     <input type="url" class="form-control" id="image" placeholder="">
                 </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 1</h2>
+                            <h4>I like everyone that I meet.</h4>
+                            <select class="form-control" id="question1">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 2</h2>
+                            <h4>I am always full of energy.</h4>
+                            <select class="form-control" id="question2">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 3</h2>
+                            <h4>I usually feel relaxed in a big crowd.</h4>
+                            <select class="form-control" id="question3">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 4</h2>
+                            <h4>I enjoy being outside.</h4>
+                            <select class="form-control" id="question4">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 5</h2>
+                            <h4>I tend to think before I speak.</h4>
+                            <select class="form-control" id="question5">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 6</h2>
+                            <h4>I'm destined to be famous.</h4>
+                            <select class="form-control" id="question6">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 7</h2>
+                            <h4>When others are sad, I'm sad.</h4>
+                            <select class="form-control" id="question7">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 8</h2>
+                            <h4>I'm very creative.</h4>
+                            <select class="form-control" id="question8">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 9</h2>
+                            <h4>My living space is very clean and organized.</h4>
+                            <select class="form-control" id="question9">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h2>Question 10</h2>
+                            <h4>I tend to go with the flow.</h4>
+                            <select class="form-control" id="question10">
+                                <option value="">Make a selection</option>
+                                <option value="1">1 (Strongly Disagree)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5 (Strongly Agree)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" id="submit"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
+                <br>
+            </div>
         </form>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 1</h2>
-                        <h4>I like everyone that I meet.</h4>
-                        <select class="form-control" id="question1">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 2</h2>
-                        <h4>I am always full of energy.</h4>
-                        <select class="form-control" id="question2">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 3</h2>
-                        <h4>I usually feel relaxed in a big crowd.</h4>
-                        <select class="form-control" id="question3">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 4</h2>
-                        <h4>I enjoy being outside.</h4>
-                        <select class="form-control" id="question4">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 5</h2>
-                        <h4>I tend to think before I speak.</h4>
-                        <select class="form-control" id="question5">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 6</h2>
-                        <h4>I'm destined to be famous.</h4>
-                        <select class="form-control" id="question6">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 7</h2>
-                        <h4>When others are sad, I'm sad.</h4>
-                        <select class="form-control" id="question7">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 8</h2>
-                        <h4>I'm very creative.</h4>
-                        <select class="form-control" id="question8">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 9</h2>
-                        <h4>My living space is very clean and organized.</h4>
-                        <select class="form-control" id="question9">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <h2>Question 10</h2>
-                        <h4>I tend to go with the flow.</h4>
-                        <select class="form-control" id="question10">
-                            <option value="">Make a selection</option>
-                            <option value="1">1 (Strongly Disagree)</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5 (Strongly Agree)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <button type="button" class="btn btn-primary btn-block" id="submit"><span class="glyphicon glyphicon-thumbs-up"></span> Submit</button>
-            <br>
-        </div>
     </div>
     <footer class="footer">
         <div class="container">
             <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/jspildener/FriendFinder">GitHub Repo</a></p>
         </div>
     </footer>
-    <div class="modal fade">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Best Match</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
@@ -244,11 +243,19 @@ $("#submit").on("click", function(event) {
 
     if (isValid) {
         $.post("/api/friends", userInput).done(function(data) {
-            //.log(data);
+            $("#modalTitle").text(data.name);
+            $("#modalBody").attr("src", data.photo);
+            $("#myModal").modal('toggle');
+
+            console.log(data);
         });
     } else {
         alert("Please fill out all fields.");
     }
+});
+$(".reset-data").click(function() {
+    $(this).closest('form').find("input[type=text], textarea").val("");
+    console.log("reset");
 });
 
 function validateUserInput(userInput) {
